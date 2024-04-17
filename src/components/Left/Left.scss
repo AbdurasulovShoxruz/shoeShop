@@ -1,0 +1,42 @@
+.left{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    width: 15%;
+
+    &__category{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        & h2{
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        &--categories{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            & input{
+                display: none;
+            }
+            
+            & label{
+                font-size: 17px;
+                font-weight: 500;
+                cursor: pointer;
+                color: rgb(157, 155, 155);
+                cursor: pointer;
+            }
+            & label:hover{
+                color: #000;
+            }
+        }
+    }
+}
+.active{
+    color: red;
+}

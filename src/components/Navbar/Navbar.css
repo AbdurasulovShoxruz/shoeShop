@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar__features {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.navbar__features ul {
+  display: flex;
+  gap: 15px;
+}
+.navbar__features ul a {
+  text-decoration: none;
+  color: #000;
+}
+.navbar__features--category input {
+  display: none;
+}
+.navbar__features--category label {
+  cursor: pointer;
+}
+.navbar__features--search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.navbar__features--search input {
+  border: none;
+  outline: none;
+}
+.navbar__login {
+  display: flex;
+  gap: 15px;
+}
+.navbar__login .cart {
+  font-size: 28px;
+}
+.navbar__login .cart::after {
+  content: "";
+  position: absolute; /* Set position to absolute */
+  top: 50%; /* Adjust position as needed */
+  right: 10px; /* Adjust position as needed */
+  transform: translate(50%, -50%); /* Center the pseudo-element */
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+}
+.navbar__login button {
+  padding: 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+}
+.navbar__login button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.line {
+  width: 1px;
+  border: 1px solid;
+  height: 35px;
+}/*# sourceMappingURL=Navbar.css.map */

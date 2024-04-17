@@ -1,0 +1,38 @@
+.left {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  width: 15%;
+}
+.left__category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.left__category h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+.left__category--categories {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.left__category--categories input {
+  display: none;
+}
+.left__category--categories label {
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  color: rgb(157, 155, 155);
+  cursor: pointer;
+}
+.left__category--categories label:hover {
+  color: #000;
+}
+
+.active {
+  color: red;
+}/*# sourceMappingURL=Left.css.map */
