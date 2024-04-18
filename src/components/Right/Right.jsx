@@ -1,7 +1,8 @@
+import Shoe from "../../pages/Shoe/Shoe";
 import Button from "../Button/Button";
 import "./Right.scss";
 
-function Right({ burgers, addToCartHandler, cartItem }) {
+function Right({ burgers, addToCartHandler, cartItem , handleNavigate}) {
   const existingCart = cartItem.find((item) => item.id === burgers.id);
 
   return (
@@ -9,7 +10,7 @@ function Right({ burgers, addToCartHandler, cartItem }) {
       <div className="right__shoes">
         {burgers.map((burger) => (
           <div key={burger.id} className="right__shoes--shoe">
-            <img src={burger.image} alt="" />
+            <img onClick={() => handleNavigate(burger.id)} src={burger.image} alt="" />
             <h1 className="right__shoes--shoe--name">{burger.name}</h1>
             <div className="right__shoes--shoe--price">
               <p className="newPrice">${burger.price}</p>

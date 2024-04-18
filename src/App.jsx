@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./App.scss";
 import Left from "./components/Left/Left";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,7 +21,12 @@ function App() {
     gender: "all",
     search: "",
   });
-  console.log(inputData.sortedData);
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (shoeId) => {
+    navigate("/shoe/" + shoeId);
+  };
 
   useEffect(() => {
     filterData();
@@ -119,6 +125,7 @@ function App() {
           />
           <Left category={inputData.category} inputHandler={inputHandler} />
           <Right
+            handleNavigate={handleNavigate}
             cartItem={cartItem}
             addToCartHandler={addToCartHandler}
             burgers={inputData.sortedData}

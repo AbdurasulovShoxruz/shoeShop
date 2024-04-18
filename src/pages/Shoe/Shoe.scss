@@ -1,0 +1,10 @@
+.shoePage{
+    padding: 10px;
+
+    &__image{
+        border: 1px solid;
+        & img{
+            width: 50px;
+        }
+    }
+}
