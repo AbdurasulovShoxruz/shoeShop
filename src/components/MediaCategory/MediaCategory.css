@@ -1,0 +1,20 @@
+.mediaCategory {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .mediaCategory {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .mediaCategory button {
+    padding: 3px 10px;
+    border: none;
+    background-color: transparent;
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=MediaCategory.css.map */

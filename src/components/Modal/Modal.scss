@@ -106,3 +106,12 @@
     }
   }
 }
+
+
+// media part
+
+@media(max-width: 480px){
+  .modal{
+    display: none;
+  }
+}

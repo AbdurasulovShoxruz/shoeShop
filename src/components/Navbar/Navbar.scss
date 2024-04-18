@@ -69,10 +69,51 @@
             color: #000;
         }
     }
+    &__mediaIcon{
+        display: none;
+    }
+
     
 }
 .line{
     width: 1px;
     border: 1px solid;
     height: 35px;
+}
+
+// media part
+
+
+@media(max-width: 480px){
+    .navbar{
+        display: flex;
+        align-items: center;
+
+        & h1{
+            font-size: 25px;
+        }
+
+        &__features{
+            display: none;
+        }
+        &__login{
+            display: none;
+        }
+        &__mediaIcon{
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            .cartIcon2{
+                display: inline-block;
+                font-size: 30px;
+            }
+            .menuIcon{
+                display: inline-flex;
+                font-size: 30px;
+            }
+        }
+    }
 }

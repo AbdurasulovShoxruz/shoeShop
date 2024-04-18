@@ -62,9 +62,42 @@
   background-color: #fff;
   color: #000;
 }
+.navbar__mediaIcon {
+  display: none;
+}
 
 .line {
   width: 1px;
   border: 1px solid;
   height: 35px;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+  .navbar h1 {
+    font-size: 25px;
+  }
+  .navbar__features {
+    display: none;
+  }
+  .navbar__login {
+    display: none;
+  }
+  .navbar__mediaIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .navbar__mediaIcon .cartIcon2 {
+    display: inline-block;
+    font-size: 30px;
+  }
+  .navbar__mediaIcon .menuIcon {
+    display: inline-flex;
+    font-size: 30px;
+  }
 }/*# sourceMappingURL=Navbar.css.map */

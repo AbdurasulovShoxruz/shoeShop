@@ -21,13 +21,13 @@ export const shoesData = [
   },
   {
     id: 3,
-    name: "Flex Gym Training Shoes",
+    name: "Addidas Samba",
     image:
-      "https://i.pinimg.com/originals/51/2b/4b/512b4b870390fac58da5206e88d228d6.png",
+      "https://freepngimg.com/thumb/adidas/58285-samba-superstar-originals-adidas-sneakers-shoe.png",
     price: 64.99,
     previousPrice: 79.99,
     category: "gym",
-    gender: "Woman",
+    gender: "Man",
   },
   {
     id: 4,
@@ -61,9 +61,9 @@ export const shoesData = [
   },
   {
     id: 7,
-    name: "Tennis Elite Court Shoes",
+    name: "Addidas Elite Shoe",
     image:
-      "https://static.nike.com/a/images/t_default/0d82a8f5-561e-4f12-bac9-c4102e75b8c7/custom-nike-air-force-1-high-by-you-shoes.png",
+      "https://freepngimg.com/thumb/adidas_shoes/6-2-adidas-shoes-png-image-thumb.png",
     price: 99.99,
     previousPrice: 119.99,
     category: "Tennis Shoes",
@@ -71,22 +71,22 @@ export const shoesData = [
   },
   {
     id: 8,
-    name: "Outdoor Adventure Hiking Shoes",
+    name: "Dynamo Zip Grade",
     image:
-      "https://clipart-library.com/images_k/shoe-transparent-background/shoe-transparent-background-19.png",
+      "https://freepngimg.com/thumb/adidas_shoes/5-2-adidas-shoes-transparent-thumb.png",
     price: 89.99,
     previousPrice: 109.99,
     category: "outdoor",
-    gender: "Unisex", // Can be "Man", "Woman", or "Unisex"
+    gender: "Man", // Can be "Man", "Woman", or "Unisex"
   },
   {
     id: 9,
-    name: "Sprint Pro Running Shoes",
+    name: "Loro Piano",
     image:
-      "https://i.pinimg.com/originals/51/2b/4b/512b4b870390fac58da5206e88d228d6.png",
+      "https://pre-porter.com/wp-content/uploads/2023/05/feff-PhotoRoom-13.png",
     price: 79.99,
     previousPrice: 109.99, // Set to 0 if there's no previous price
-    category: "running",
+    category: "outdoor",
     gender: "Man",
   },
   {

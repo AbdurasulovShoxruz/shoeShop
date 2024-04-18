@@ -1,5 +1,6 @@
 .right {
   width: 85%;
+
   &__shoes {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -7,19 +8,14 @@
     gap: 30px;
 
     &--shoe {
-      border: 2px solid #333; /* Dark border for definition */
-      border-radius: 20px; /* Smooth edges */
+      border: 2px solid #333;
+      border-radius: 20px;
       width: 270px;
       display: grid;
-      grid-template-columns: 1fr; /* Single column */
-      grid-template-areas:
-          "image"
-          "title"
-          "price"
-          "cart";
-      grid-gap: 5px; /* Adjusted gap between grid items */
+      grid-template-columns: 1fr;
+      grid-template-areas: "image" "title" "price" "cart";
+      grid-gap: 5px;
       padding: 10px 20px;
-      
 
       &--addCart {
         padding: 5px;
@@ -28,10 +24,11 @@
         background-color: #000;
         color: #fff;
         grid-area: cart;
-      }
-      &--addCart:hover {
-        background-color: #fff;
-        color: #000;
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+        }
       }
 
       &--name {
@@ -40,6 +37,7 @@
         text-align: center;
         grid-area: title;
       }
+
       &--price {
         display: flex;
         align-items: center;
@@ -57,14 +55,57 @@
         width: 100%;
         grid-area: image;
       }
-    }
-    &--shoe:hover{
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+
+      &:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
     }
   }
 }
+
 .shoeLine {
   width: 1px;
   height: 20px;
   border: 1px solid;
+}
+
+@media (max-width: 480px) {
+  .right {
+    width: 100%;
+
+    &__shoes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      justify-items: center;
+      gap: 15px;
+      padding: 10px 0;
+
+      &--shoe {
+        width: 180px;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        grid-template-areas: "image" "title" "price" "cart";
+
+        & img {
+          width: 80%;
+        }
+
+        &--name {
+          font-size: 15px;
+        }
+
+        &--price {
+          & p {
+            font-size: 13px;
+          }
+        }
+
+        & button {
+          width: 80%;
+          padding: 3px 3px;
+        }
+      }
+    }
+  }
 }

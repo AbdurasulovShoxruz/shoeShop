@@ -40,3 +40,8 @@
 .active{
     color: red;
 }
+@media(max-width: 480px){
+    .left{
+        display: none;
+    }
+}

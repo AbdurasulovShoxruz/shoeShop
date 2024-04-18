@@ -5,9 +5,13 @@ import Navbar from "./components/Navbar/Navbar";
 import Right from "./components/Right/Right";
 import Modal from "./components/Modal/Modal";
 import { shoesData } from "./shoes";
+import MediaCartModal from "./components/MediaCartModal/MediaCartModal";
+import MenuModal from "./components/MenuModal/MenuModal";
+import MediaCategory from "./components/MediaCategory/MediaCategory";
 
 function App() {
   const [toggle, setToggle] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(false);
   const [cartItem, setCartItem] = useState([]);
   const [inputData, setInputData] = useState({
     originalData: [...shoesData],
@@ -22,27 +26,31 @@ function App() {
     filterData();
   }, [inputData.category, inputData.gender, inputData.search]);
 
-  const totalQuantity = cartItem.reduce((total, item) => total + item.qty, 0)
+  const totalQuantity = cartItem.reduce((total, item) => total + item.qty, 0);
 
-  const totalPrice = cartItem.reduce((total, item) => total + (item.price * item.qty) + 10 + 5, 0)
+  const totalPrice = cartItem.reduce(
+    (total, item) => total + item.price * item.qty + 10 + 5,
+    0
+  );
 
   const filterData = () => {
     let tempData = [...inputData.originalData];
-    tempData = tempData.filter((shoe) => 
+    tempData = tempData.filter((shoe) =>
       shoe.name.toLowerCase().includes(inputData.search)
     );
-    if(inputData.category !== "all"){
-      tempData = tempData.filter((shoe) => shoe.category === inputData.category);
+    if (inputData.category !== "all") {
+      tempData = tempData.filter(
+        (shoe) => shoe.category === inputData.category
+      );
     }
-    if(inputData.gender !== 'all'){
+    if (inputData.gender !== "all") {
       tempData = tempData.filter((shoe) => shoe.gender === inputData.gender);
     }
-  
+
     setInputData((prev) => {
       return { ...prev, sortedData: tempData };
     });
-  }
-  
+  };
 
   const inputHandler = (e) => {
     const name = e.target.name;
@@ -88,6 +96,12 @@ function App() {
     setToggle((prev) => !prev);
   };
 
+  const menuHandler = () => {
+    setMenuToggle((prev) => !prev);
+  };
+
+  console.log(inputHandler);
+
   return (
     <>
       <div className="app">
@@ -95,8 +109,14 @@ function App() {
           className="navbar"
           toggleHandler={toggleHandler}
           inputHandler={inputHandler}
+          menuHandler={menuHandler}
         />
         <div className="main">
+          <MediaCategory
+            className={"mediaCategory"}
+            category={inputData.category}
+            inputHandler={inputHandler}
+          />
           <Left category={inputData.category} inputHandler={inputHandler} />
           <Right
             cartItem={cartItem}
@@ -106,8 +126,8 @@ function App() {
         </div>
         {toggle && (
           <Modal
-          totalPrice={totalPrice}
-          totalQuantity={totalQuantity}
+            totalPrice={totalPrice}
+            totalQuantity={totalQuantity}
             toggleHandler={toggleHandler}
             burgers={inputData.sortedData}
             addToCartHandler={addToCartHandler}
@@ -115,6 +135,18 @@ function App() {
             removeHandler={removeHandler}
           />
         )}
+        {toggle && (
+          <MediaCartModal
+            totalPrice={totalPrice}
+            totalQuantity={totalQuantity}
+            toggleHandler={toggleHandler}
+            burgers={inputData.sortedData}
+            addToCartHandler={addToCartHandler}
+            cartItem={cartItem}
+            removeHandler={removeHandler}
+          />
+        )}
+        {menuToggle && <MenuModal menuHandler={menuHandler} />}
       </div>
     </>
   );

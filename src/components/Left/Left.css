@@ -35,4 +35,10 @@
 
 .active {
   color: red;
+}
+
+@media (max-width: 480px) {
+  .left {
+    display: none;
+  }
 }/*# sourceMappingURL=Left.css.map */

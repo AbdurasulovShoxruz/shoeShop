@@ -8,13 +8,13 @@
   gap: 30px;
 }
 .right__shoes--shoe {
-  border: 2px solid #333; /* Dark border for definition */
-  border-radius: 20px; /* Smooth edges */
+  border: 2px solid #333;
+  border-radius: 20px;
   width: 270px;
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
+  grid-template-columns: 1fr;
   grid-template-areas: "image" "title" "price" "cart";
-  grid-gap: 5px; /* Adjusted gap between grid items */
+  grid-gap: 5px;
   padding: 10px 20px;
 }
 .right__shoes--shoe--addCart {
@@ -51,11 +51,44 @@
   grid-area: image;
 }
 .right__shoes--shoe:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .shoeLine {
   width: 1px;
   height: 20px;
   border: 1px solid;
+}
+
+@media (max-width: 480px) {
+  .right {
+    width: 100%;
+  }
+  .right__shoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+  .right__shoes--shoe {
+    width: 180px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "title" "price" "cart";
+  }
+  .right__shoes--shoe img {
+    width: 80%;
+  }
+  .right__shoes--shoe--name {
+    font-size: 15px;
+  }
+  .right__shoes--shoe--price p {
+    font-size: 13px;
+  }
+  .right__shoes--shoe button {
+    width: 80%;
+    padding: 3px 3px;
+  }
 }/*# sourceMappingURL=Right.css.map */

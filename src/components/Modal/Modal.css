@@ -93,4 +93,10 @@
 .modal__cartShoes--burger--buttons button:hover {
   color: #000;
   background: #fff;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    display: none;
+  }
 }/*# sourceMappingURL=Modal.css.map */

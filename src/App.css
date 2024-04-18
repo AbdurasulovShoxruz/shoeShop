@@ -11,4 +11,24 @@
   gap: 10px;
   display: flex;
   height: 90%;
+}
+
+.mediaCategory {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mediaCategory {
+    display: flex;
+  }
 }/*# sourceMappingURL=App.css.map */

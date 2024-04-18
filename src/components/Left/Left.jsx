@@ -1,13 +1,7 @@
-import './Left.scss';
-import { useState } from 'react';
+import "./Left.scss";
 
 function Left({ inputHandler }) {
-  const [activeLink, setActiveLink] = useState(null);
-
-  const handleClick = (category) => {
-    setActiveLink(category);
-  };
-
+  
 
   return (
     <div className="left">
@@ -15,24 +9,64 @@ function Left({ inputHandler }) {
         <h2>Categories</h2>
         <div className="left__category--categories">
           <div>
-            <input id='all' onChange={inputHandler} name="category" type="radio" value="all" />
-            <label className={activeLink === 'all' ? 'active' : ''} htmlFor="all" onClick={handleClick}>All</label>
-          </div>
-          <div >
-            <input id='running' onChange={inputHandler} name="category" type="radio" value="running" />
-            <label className={activeLink === 'all' ? 'active' : ''} htmlFor="running" onClick={handleClick}>Running Shoes</label>
-          </div>
-          <div>
-            <input id='outdoor' onChange={inputHandler} name="category" type="radio" value="outdoor" />
-            <label className={activeLink === 'all' ? 'active' : ''} htmlFor="outdoor" onClick={handleClick}>Outdoor Shoes</label>
-          </div>
-          <div>
-            <input id='gym' onChange={inputHandler} name="category" type="radio" value="gym" />
-            <label className={activeLink === 'all' ? 'active' : ''} htmlFor="gym" onClick={handleClick}>Gym Shoes</label>
+            <input
+              id="all"
+              onChange={inputHandler}
+              name="category"
+              type="radio"
+              value="all"
+            />
+            <label htmlFor="all">
+              All
+            </label>
           </div>
           <div>
-            <input id='tennis' onChange={inputHandler} name="category" type="radio" value="tennis" />
-            <label className={activeLink === 'all' ? 'active' : ''} htmlFor="tennis" onClick={handleClick}>Tennis Shoes</label>
+            <input
+              id="running"
+              onChange={inputHandler}
+              name="category"
+              type="radio"
+              value="running"
+            />
+            <label htmlFor="running">
+              Running Shoes
+            </label>
+          </div>
+          <div>
+            <input
+              id="outdoor"
+              onChange={inputHandler}
+              name="category"
+              type="radio"
+              value="outdoor"
+            />
+            <label htmlFor="outdoor">
+              Outdoor Shoes
+            </label>
+          </div>
+          <div>
+            <input
+              id="gym"
+              onChange={inputHandler}
+              name="category"
+              type="radio"
+              value="gym"
+            />
+            <label htmlFor="gym">
+              Gym Shoes
+            </label>
+          </div>
+          <div>
+            <input
+              id="tennis"
+              onChange={inputHandler}
+              name="category"
+              type="radio"
+              value="tennis"
+            />
+            <label htmlFor="tennis">
+              Tennis Shoes
+            </label>
           </div>
         </div>
       </div>
