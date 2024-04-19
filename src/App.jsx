@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+// App.jsx
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.scss";
 import Left from "./components/Left/Left";
@@ -9,6 +10,7 @@ import { shoesData } from "./shoes";
 import MediaCartModal from "./components/MediaCartModal/MediaCartModal";
 import MenuModal from "./components/MenuModal/MenuModal";
 import MediaCategory from "./components/MediaCategory/MediaCategory";
+import Shoe from "./pages/Shoe/Shoe";
 
 function App() {
   const [toggle, setToggle] = useState(false);
@@ -105,8 +107,6 @@ function App() {
   const menuHandler = () => {
     setMenuToggle((prev) => !prev);
   };
-
-  console.log(inputHandler);
 
   return (
     <>

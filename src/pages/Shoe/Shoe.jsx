@@ -1,6 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { shoesData } from '../../shoes';
 import './Shoe.scss';
+import { useState } from 'react';
 
 const sizeFunctions = [
   {
@@ -23,16 +24,28 @@ const sizeFunctions = [
     size: 43,
     id: 5
   },
-  {
-    size: 44,
-    id: 6
-  },
 ];
 
 function Shoe() {
+  const [cartItem, setCartItem] = useState([]);
   const { shoeId } = useParams();
 
   const navigate = useNavigate();
+
+  const addToCartHandler = (shoe) => {
+    const existCart = cartItem.find((item) => item.id === shoe.id);
+
+    if (existCart) {
+      const newItem = cartItem.map((item) =>
+        item.id === shoe.id ? { ...item, qty: item.qty + 1 } : item
+      );
+      setCartItem(newItem);
+    } else {
+      setCartItem((prev) => {
+        return [...prev, { ...shoe, qty: 1 }];
+      });
+    }
+  };
 
   const shoe = shoesData.find((sh) => sh.id === +shoeId);
 
@@ -42,7 +55,7 @@ function Shoe() {
         X
       </button>
       <div className="shoePage__image">
-        <img src={shoe.image} alt="" />
+        <img src={shoe?.image} alt="" />
       </div>
 
       <div className="shoePage__mid">
@@ -50,7 +63,7 @@ function Shoe() {
           <h1>{shoe?.name}</h1>
           <div className="shoePage__mid--title--price">
             <h2>${shoe?.price}</h2>
-            <div className="line"></div>
+            <div className="shoeLine"></div>
             <h2 className="prev">${shoe.previousPrice}</h2>
           </div>
         </div>
@@ -74,7 +87,7 @@ function Shoe() {
         </p>
       </div>
       <div className="shoePage__cart">
-        <button>Add To Cart</button>
+        <button onClick={() => addToCartHandler(burger)}>Add To Cart</button>
       </div>
     </div>
   );
