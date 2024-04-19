@@ -14,6 +14,9 @@
 .mediaCategory{
     display: none;
 }
+.mediaCartModal{
+    display: none;
+}
   
 @media(max-width: 480px){
     .app{
@@ -28,5 +31,8 @@
     }
     .mediaCategory{
         display: flex;
+    }
+    .mediaCartModal{
+        display: inline-flex;
     }
 }

@@ -144,6 +144,7 @@ function App() {
         )}
         {toggle && (
           <MediaCartModal
+          className='mediaCartModal'
             totalPrice={totalPrice}
             totalQuantity={totalQuantity}
             toggleHandler={toggleHandler}
