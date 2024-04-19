@@ -1,9 +1,90 @@
 .shoePage {
   padding: 10px;
+  display: grid;
+  grid-template-rows: 300px 3fr 20px;
+  position: relative;
 }
-.shoePage__image {
-  border: 1px solid;
+.shoePage .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
 }
 .shoePage__image img {
-  width: 50px;
+  width: 100%;
+}
+.shoePage__cart {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.shoePage__cart button {
+  padding: 5px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-size: clamp(0.4375rem, 0.4357rem + 2.8953vw, 1.25rem);
+  border: none;
+}
+.shoePage__mid {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+.shoePage__mid .desc {
+  font-size: clamp(0.4375rem, 0.4357rem + 2.8953vw, 1.25rem);
+}
+.shoePage__mid--title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.shoePage__mid--title h1 {
+  font-size: clamp(0.9375rem, 0.9347rem + 4.4543vw, 2.1875rem);
+  font-weight: 700;
+}
+.shoePage__mid--title--price {
+  display: flex;
+  gap: 10px;
+}
+.shoePage__mid--title--price h2 {
+  font-size: clamp(0.625rem, 0.6236rem + 2.2272vw, 1.25rem);
+  font-weight: 600;
+}
+.shoePage__mid--title--price .prev {
+  text-decoration: line-through;
+  color: gray;
+}
+.shoePage__mid--title--function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.shoePage__mid--title--function h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+.shoePage__mid--title--function div {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.shoePage__mid--title--function div label {
+  font-weight: 600;
+}
+
+.shoeLine {
+  height: 80%;
+  border: 1px solid;
+  width: 1px;
 }/*# sourceMappingURL=Shoe.css.map */
